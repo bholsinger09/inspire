@@ -7,6 +7,7 @@ class App {
     this.controllers = {
       weatherController: new WeatherController(),
       todoController: new TodoController()
+      //will also need quote controller and image controller
     }
   }
 }

@@ -4,6 +4,7 @@ const _quoteApi = axios.create({
 	timeout: 3000
 });
 
+//we need to add state and subscriber
 
 export default class QuoteService {
 
