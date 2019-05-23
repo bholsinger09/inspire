@@ -1,8 +1,17 @@
+//`Functionality`
+//	- Todo's can be added to a list (POST)
+//		- Todo's can be removed (DELETE)
+//			- Todo's can be marked complete (PUT)
+//			- The todolist shows the total count of tasks currently being tracked
+//				- The todolist takes advantage of the TodoService to provide persistent data
+
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/ben/todos/',
 	timeout: 3000
 });
+//model will come from sandbox 
+
 
 let _state = {
 	todos: [],

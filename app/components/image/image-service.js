@@ -4,6 +4,8 @@ const imgApi = axios.create({
 	timeout: 3000
 });
 
+//currently only one image is in database
+
 export default class ImageService {
 
 }
