@@ -51,6 +51,7 @@ export default class ImageService {
 			.then(res => {
 
 				let imgData = res.data.map(i => new ImageModel(i))
+				//console shows res.data.map as not a function 
 				_setState('apiImages', imgData)
 			})
 			.catch(err => console.error(err))
