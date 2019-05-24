@@ -1,6 +1,5 @@
 //`Functionality`
 //	- Todo's can be added to a list (POST)
-//		- Todo's can be removed (DELETE)
 //			- Todo's can be marked complete (PUT)
 //			- The todolist shows the total count of tasks currently being tracked
 //				- The todolist takes advantage of the TodoService to provide persistent data
