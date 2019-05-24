@@ -1,3 +1,5 @@
+import { ImageModel } from "../../models/images";
+
 //Private
 
 // @ts-ignore
@@ -30,5 +32,24 @@ function _setState(propName, data) {
 
 //Public
 export default class ImageService {
+	addSubscribers(propName, fn) {
+		_subscribers[propName].push(fn)
+	}
+	get ApiImages() {
+		return _state.apiImages.map(image => new ImageModel(image))
+	}
 
+	get ActiveImage() {
+		return new ImageModel(_state.activeImage)
+	}
+
+
+	getAllSImages() {
+		imgApi.get()
+			.then(res => {
+				let imgData = res.data.map(i => new ImageModel(i))
+				_setState('apiImages', imgData)
+			})
+			.catch(err => console.error(err))
+	}
 }
