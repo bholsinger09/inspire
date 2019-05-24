@@ -1,4 +1,4 @@
-import QuotesModel from "../../models/quotes";
+import QuotesModel from "../../models/quotes.js";
 
 // @ts-ignore
 const _quoteApi = axios.create({
@@ -43,7 +43,7 @@ export default class QuoteService {
 		return _state.apiQuotes
 	}
 
-	getAllSImages() {
+	getAllQuotes() {
 
 		_quoteApi.get()
 			.then(res => {

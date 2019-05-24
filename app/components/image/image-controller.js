@@ -19,7 +19,7 @@ function _updateImagesUi() {
   let images = _is.ApiImages
   let template = ''
   template += images.ImageTemplate
-  //error with ImageTemplate shows as not existing on ImageModel 
+
 
   document.getElementById('bg-image').innerHTML = template
 

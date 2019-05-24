@@ -9,10 +9,33 @@ import QuoteService from "./quote-service.js";
 //    - The image should be on large display with at least one other element positioned over the top of the image.
 // - A form to add a new todo can be accessed and when submitted the page does not reload
 
+//Private
+
 let _qs = new QuoteService()
 
-//update ui needs created
+function _updateImagesUi() {
+  let quotes = _qs.ApiQuotes
+  let template = ''
+  template += quote.QuoteTemplate
+
+
+  document.getElementById('quote').innerHTML = template
+
+
+}
+
+
+
+
+//Public
 
 export default class QuoteController {
+  constructor() {
+    _qs.addSubscribers('apiQuotes', _updateImagesUi)
+
+
+    _qs.getAllQuotes()
+  }
+
 
 }
