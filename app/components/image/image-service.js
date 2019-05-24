@@ -1,4 +1,4 @@
-import { ImageModel } from "../../models/images";
+import { ImageModel } from "../../models/images.js";
 
 //Private
 
@@ -36,6 +36,7 @@ export default class ImageService {
 		_subscribers[propName].push(fn)
 	}
 	get ApiImages() {
+		console.log('getting from model ')
 		return _state.apiImages.map(image => new ImageModel(image))
 	}
 
@@ -45,8 +46,10 @@ export default class ImageService {
 
 
 	getAllSImages() {
+
 		imgApi.get()
 			.then(res => {
+
 				let imgData = res.data.map(i => new ImageModel(i))
 				_setState('apiImages', imgData)
 			})

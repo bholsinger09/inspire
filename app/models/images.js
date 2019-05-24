@@ -8,8 +8,20 @@ export class ImageModel {
 
   }
 
-  get imageTemplate() {
-    return ``
+  get ImageTemplate() {
+    return `
+    <div class = "row">
+    <div class = "col">
+    <img src="${this.url}" alt="Smiley face">
+
+
+    </div>
+    
+    </div>
+    
+    
+    
+    `
   }
 }
 
