@@ -37,12 +37,12 @@ export default class ImageService {
 	}
 	get ApiImages() {
 		console.log('getting from model ')
-		return _state.apiImages.map(image => new ImageModel(image))
+		return _state.apiImages
 	}
 
-	get ActiveImage() {
-		return new ImageModel(_state.activeImage)
-	}
+	// get ActiveImage() {
+	// 	return new ImageModel(_state.activeImage)
+	// }
 
 
 	getAllSImages() {
@@ -50,10 +50,14 @@ export default class ImageService {
 		imgApi.get()
 			.then(res => {
 
-				let imgData = res.data.map(i => new ImageModel(i))
-				//console shows res.data.map as not a function 
+				console.log(res.data)
+
+				let imgData = new ImageModel(res.data)
+
+
+
 				_setState('apiImages', imgData)
 			})
-			.catch(err => console.error(err))
+		//.catch(err => console.error(err))
 	}
 }
