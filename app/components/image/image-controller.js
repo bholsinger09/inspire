@@ -21,7 +21,7 @@ function _updateImagesUi() {
   template += images.ImageTemplate
 
 
-  document.getElementById('bg-image').innerHTML = template
+  document.getElementById('image').innerHTML = template
 
 
 }
@@ -31,9 +31,9 @@ function _updateImagesUi() {
 //Public
 export default class ImageController {
   constructor() {
-    // _is.addSubscribers('apiImages', _updateImagesUi)
+    _is.addSubscribers('apiImages', _updateImagesUi)
 
-    // _is.getAllSImages()
+    _is.getAllSImages()
   }
 
 

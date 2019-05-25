@@ -8,14 +8,14 @@ export default class QuotesModel {
   }
   get QuoteTemplate() {
     return `
-    <div class = "row">
-    <div class = "col">
+    
+  
     <p class = "quote">${this.quote}</p>
 
 
-    </div>
     
-    </div>
+    
+   
     
     
     
