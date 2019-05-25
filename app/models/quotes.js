@@ -1,12 +1,12 @@
 
 export default class QuotesModel {
   constructor(data) {
-    this.author = data.author
-    this.quote = data.body
+    this.author = data.quote.author
+    this.quote = data.quote.body
 
 
   }
-  get ImageTemplate() {
+  get QuoteTemplate() {
     return `
     <div class = "row">
     <div class = "col">

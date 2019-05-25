@@ -8,13 +8,13 @@ const _quoteApi = axios.create({
 //Private
 
 let _state = {
-	apiQuotes: [],
+	apiQuotes: []
 
 
 }
 
 let _subscribers = {
-	apiQuotes: [],
+	apiQuotes: []
 
 
 }
@@ -48,7 +48,7 @@ export default class QuoteService {
 		_quoteApi.get()
 			.then(res => {
 
-				console.log(res.data)
+				console.log(res.data.quote.body)
 
 				let quoteData = new QuotesModel(res.data)
 

@@ -31,9 +31,9 @@ function _updateImagesUi() {
 //Public
 export default class ImageController {
   constructor() {
-    _is.addSubscribers('apiImages', _updateImagesUi)
+    // _is.addSubscribers('apiImages', _updateImagesUi)
 
-    _is.getAllSImages()
+    // _is.getAllSImages()
   }
 
 

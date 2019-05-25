@@ -16,7 +16,7 @@ let _qs = new QuoteService()
 function _updateImagesUi() {
   let quotes = _qs.ApiQuotes
   let template = ''
-  template += quote.QuoteTemplate
+  template += quotes.QuoteTemplate
 
 
   document.getElementById('quote').innerHTML = template
@@ -32,6 +32,7 @@ function _updateImagesUi() {
 export default class QuoteController {
   constructor() {
     _qs.addSubscribers('apiQuotes', _updateImagesUi)
+
 
 
     _qs.getAllQuotes()
