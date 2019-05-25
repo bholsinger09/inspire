@@ -12,7 +12,7 @@ import WeatherService from "./weather-service.js";
 var _weatherService = new WeatherService()
 
 function drawWeather() {
-	let weather = _weatherService.getWeather
+	let weather = _weatherService.Weather
 	let template = ''
 	template += weather.WeatherTemplate
 
@@ -25,7 +25,10 @@ export default class WeatherController {
 
 	constructor() {
 		_weatherService.addSubscriber('weather', drawWeather)
+
+		//get data
 		_weatherService.getWeather()
+
 	}
 
 }

@@ -7,14 +7,14 @@ export default class Weather {
     // data.main.temp is the temperature in Kelvin
     // You should probably convert the temperature data to either F or C
     this.city = data.name
-    this.celsius = (data.main.temp - 273.15)
+    this.celsius = (data.main.temp - 273.15).toFixed(2)
   }
 
   get WeatherTemplate() {
     return `
     <ul>
-		<li>${this.city}</li>
-		<li>${this.celsius}</li>
+		<li>location:${this.city}</li>
+		<li>degrees in celsius:${this.celsius}</li>
 		
 	</ul>
     
