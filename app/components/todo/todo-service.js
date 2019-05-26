@@ -46,7 +46,7 @@ export default class TodoService {
 				console.log(toDoApiData)
 				_setState('todos', toDoApiData)
 
-				// WHAT DO YOU DO WITH THE RESPONSE?
+
 			})
 			.catch(err => _setState('error', err.response.data))
 	}

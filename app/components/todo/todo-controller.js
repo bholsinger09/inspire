@@ -10,7 +10,11 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	//WHAT IS MY PURPOSE?
+	let todoList = _todoService
+	let template = ''
+	template += todoList.TodoTemplate
+
+	document.getElementById('todos').innerHTML = template
 }
 
 function _drawError() {
