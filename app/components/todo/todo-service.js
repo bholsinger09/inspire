@@ -1,3 +1,5 @@
+import ToDoModel from "../../models/toDo.js";
+
 //`Functionality`
 //	- Todo's can be added to a list (POST)
 //			- Todo's can be marked complete (PUT)
@@ -39,6 +41,11 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
+				//console.log(res.data.data)
+				let toDoApiData = new ToDoModel(res.data.data)
+				console.log(toDoApiData)
+				_setState('todos', toDoApiData)
+
 				// WHAT DO YOU DO WITH THE RESPONSE?
 			})
 			.catch(err => _setState('error', err.response.data))
