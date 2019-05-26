@@ -9,7 +9,7 @@ const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/ben/todos/',
 	timeout: 3000
 });
-//model will come from sandbox 
+
 
 
 let _state = {
