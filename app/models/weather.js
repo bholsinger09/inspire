@@ -12,7 +12,7 @@ export default class Weather {
 
   get WeatherTemplate() {
     return `
-    <ul>
+    <ul id = "weatherList"
 		<li>location:${this.city}</li>
 		<li>degrees in celsius:${this.celsius}</li>
 		

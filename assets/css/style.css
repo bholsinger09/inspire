@@ -2,3 +2,7 @@
   color: red;
   font-size: 2em;
 }
+
+#weatherList{
+  list-style-type: none;
+}
