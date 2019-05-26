@@ -12,13 +12,6 @@ export default class QuotesModel {
   
     <p class = "quote">${this.quote}</p>
 
-
-    
-    
-   
-    
-    
-    
     `
   }
 
