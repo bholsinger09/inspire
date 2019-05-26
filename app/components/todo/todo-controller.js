@@ -10,7 +10,7 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	let todoList = _todoService
+	let todoList = _todoService.Todos
 	let template = ''
 	template += todoList.TodoTemplate
 
@@ -26,8 +26,9 @@ function _drawError() {
 export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
+		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
-		// Don't forget to add your subscriber
+
 	}
 
 	addTodo(e) {

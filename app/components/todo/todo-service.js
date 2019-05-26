@@ -32,6 +32,9 @@ export default class TodoService {
 	get TodoError() {
 		return _state.error
 	}
+	get Todos() {
+		return _state.todos
+	}
 
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
@@ -42,7 +45,7 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				//console.log(res.data.data)
-				let toDoApiData = new ToDoModel(res.data.data)
+				let toDoApiData = res.data.data.map(t => new ToDoModel(t))
 				console.log(toDoApiData)
 				_setState('todos', toDoApiData)
 

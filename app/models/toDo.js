@@ -8,7 +8,10 @@ export default class ToDoModel {
 
   }
   TodoTemplate() {
-    return ``
+    return `
+    <h1>to do 's</h1>
+				<input class="new-todo" placeholder="enter todo's here" autofocus>
+    `
   }
 }
 
