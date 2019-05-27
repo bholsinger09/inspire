@@ -2,11 +2,30 @@
   color: red;
   font-size: 2em;
 }
+body{
+  background-color: azure
+}
 
 #weatherList{
   list-style-type: none;
+  
 }
-body{
+#weather{
+background-color: azure;
+text-align-last: center
+}
+main{
   min-width: 100%;
   min-height: 100%;
 }
+
+ #inputToDo{
+  padding-bottom: 2em;
+  background-color: blanchedalmond;
+  align-content: center;
+  min-width: 100vw;
+  text-align-last: center
+  
+
+
+} 

@@ -12,9 +12,22 @@ const _todoService = new TodoService()
 function _drawTodos() {
 	let todoList = _todoService.Todos
 	let template = ''
-	template += todoList.TodoTemplate
 
-	document.getElementById('todos').innerHTML = template
+
+	todoList.forEach(td => {
+
+		template += td.TodoTemplate
+
+
+
+
+	});
+	//console.log(template)
+	console.log(template.search('</div>'))
+
+
+
+	document.getElementById('todos').innerHTML = template.slice(0, 142)
 }
 
 function _drawError() {

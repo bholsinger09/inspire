@@ -33,7 +33,7 @@ export default class TodoService {
 		return _state.error
 	}
 	get Todos() {
-		return _state.todos
+		return _state.todos.map(td => new ToDoModel(td))
 	}
 
 	addSubscriber(prop, fn) {
