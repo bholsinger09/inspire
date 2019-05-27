@@ -15,8 +15,8 @@ const todoApi = axios.create({
 
 
 let _state = {
-	todos: [],
-	error: {},
+	todos: {},
+	error: {}
 }
 let _subscribers = {
 	todos: [],
