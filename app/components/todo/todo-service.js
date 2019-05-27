@@ -35,7 +35,7 @@ export default class TodoService {
 		return _state.error
 	}
 	get Todos() {
-		return _state.todos.map(td => new ToDoModel(td))
+		return _state.todos.map(tasks => new ToDoModel(tasks))
 	}
 
 	// get Tasks() {

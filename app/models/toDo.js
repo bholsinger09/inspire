@@ -7,25 +7,27 @@ export default class ToDoModel {
 
 
   }
-  get TodoTemplate() {
-    return `
-        <form class="todo" onsubmit="app.controller.todo-controller.addTodo(event))">
-        <div id = "inputToDo">
-         <label for="description"><h1>Your To Do's</h1></label>
-        <input type="text" class="form-control" id="description" name="description"placeholder="Enter Todo's">
-        </div>
-    `
-  }
-
-  // get AddTaskTemp() {
+  // get TodoTemplate() {
   //   return `
-  //       < div id = "task" >
-  //       <label for="description">task</label>
-  //       <p>${this.description}</p>
-  // 			</div >
-  // `
+  //       <form class="todo" onsubmit="app.controller.todo-controller.addTodo(event))">
+  //       <div id = "inputToDo">
+  //        <label for="description"><h1>Your To Do's</h1></label>
+  //       <input type="text" class="form-control" id="description" name="description"placeholder="Enter Todo's">
+  //       </div>
+  //   `
+  // }
 
-}
+  get TaskTemp() {
+    return `
+        <div id = "task" >
+        <label for="description">task</label>
+         <p>${this.description}</p>
+          <p>${this.user}</p>
+            <p>completed:${this.completed}</p>
+  			</div >
+   `
+
+  }
 
 
 

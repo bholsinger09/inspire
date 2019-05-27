@@ -10,27 +10,42 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodoForm() {
-	let todoList = _todoService.Todos
-	let template = ''
+	document.getElementById('todos').innerHTML = `
+	<form class="todo" onsubmit="app.controllers.todoController.addTodo(event))">
+         <div id = "inputToDo">
+         <label for="description"><h1>Your To Do's</h1></label>
+         <input type="text" class="form-control" id="description" name="description"placeholder="Enter Todo's">
+         </div>
+	
+	
+	`
 
 
-	todoList.forEach(td => {
-
-		template += td.TodoTemplate
 
 
 
+	// < form class="todo" onsubmit = "app.controllers.todo-controller.addTodo(event))" >
+	// 	<div id="inputToDo">
+	// 		<label for="description"><h1>Your To Do's</h1></label>
+	// 		<input type="text" class="form-control" id="description" name="description" placeholder="Enter Todo's">
+	//   </div>
 
-	});
+
+
+
 	//console.log(template)
-	console.log(template.search('</div>'))
 
-	document.getElementById('todos').innerHTML = template.slice(0, 400)
+
+
 }
 
 function _drawTasks() {
-	let tasksTemp = _todoService.Tasks
+	let tasks = _todoService.Todos
 	let template = ''
+	tasks.forEach(task => {
+		template += task.TaskTemp
+	})
+	document.getElementById('todo-content-section').innerHTML = template
 
 }
 
@@ -45,10 +60,16 @@ function _drawError() {
 export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
-		_todoService.addSubscriber('todos', _drawTodoForm)
-		_todoService.addSubscriber('tasks', _drawTasks)
+		_todoService.addSubscriber('todos', _drawTasks)
+
 		_todoService.getTodos()
 
+
+	}
+
+	renderTasks() {
+		_drawTasks();
+		_drawTodoForm();
 
 	}
 
@@ -69,7 +90,7 @@ export default class TodoController {
 
 
 		_todoService.addTodo(todo)
-		form.reset()
+		//form.reset()
 	}
 
 	toggleTodoStatus(todoId) {

@@ -11,11 +11,12 @@
 
 <body id="bg-image">
 	<header id="weather"></header>
-	<section class="todo-section">
+	<section class="todo-form-section">
+		<button onclick="app.controllers.todoController.renderTasks()">The To Do Button</button>
 		<div>
 
 			<div id="todo-error"></div>
-			<form onsubmit="app.controller.todo-controller.addTodo(event)"></form>
+			<form onsubmit="app.controllers.todoController.addTodo(event)"></form>
 			<div id="todos"></div>
 		</div>
 	</section>
