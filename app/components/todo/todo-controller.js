@@ -25,12 +25,12 @@ function _drawTodoForm() {
 	//console.log(template)
 	console.log(template.search('</div>'))
 
-	document.getElementById('todos').innerHTML = template.slice(0, 220)
+	document.getElementById('todos').innerHTML = template.slice(0, 400)
 }
 
 // function _addedToDos() {
 // 	document.getElementById('todo-content-section').innerHTML = `
-// 	<form class="row" onsubmit="app.controller.todo-controller.addTodo(event))">
+// 	<form class="user" onsubmit="app.controller.todo-controller.addTodo(event))">
 // 	<div id = "inputUser">
 //          <label for="description">user</label>
 //         <input type="text" class="form-control" id="description" name="user"placeholder="enter user">
