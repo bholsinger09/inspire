@@ -10,23 +10,40 @@
 </head>
 
 <body id="bg-image">
-	<div id="weather">
-		Your Weather Template
-	</div>
+	<header id="weather"></header>
+	<section class="todo-section">
+		<div>
 
-	<div id="quote">
-		The Quote
-	</div>
+			<div id="todo-error"></div>
+			<form onsubmit="app.controller.todo-controller.addTodo(event)"></form>
+			<div id="todos"></div>
+		</div>
+	</section>
+	<section id="todo-content-section">
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
-	</div>
+	</section>
+	<main id="image">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</main>
+	<footer id="quote"></footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
+
+
 </body>
 
 </html>
