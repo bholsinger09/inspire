@@ -16,11 +16,13 @@ const todoApi = axios.create({
 
 let _state = {
 	todos: {},
-	error: {}
+	error: {},
+
 }
 let _subscribers = {
 	todos: [],
-	error: []
+	error: [],
+
 }
 
 function _setState(prop, data) {
@@ -35,6 +37,11 @@ export default class TodoService {
 	get Todos() {
 		return _state.todos.map(td => new ToDoModel(td))
 	}
+
+	// get Tasks() {
+	// 	return _state.tasks
+	// }
+
 
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)

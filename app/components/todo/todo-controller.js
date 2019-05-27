@@ -28,16 +28,13 @@ function _drawTodoForm() {
 	document.getElementById('todos').innerHTML = template.slice(0, 400)
 }
 
-// function _addedToDos() {
-// 	document.getElementById('todo-content-section').innerHTML = `
-// 	<form class="user" onsubmit="app.controller.todo-controller.addTodo(event))">
-// 	<div id = "inputUser">
-//          <label for="description">user</label>
-//         <input type="text" class="form-control" id="description" name="user"placeholder="enter user">
-//         </div>
-// 	`
+function _drawTasks() {
+	let tasksTemp = _todoService.Tasks
+	let template = ''
 
-// }
+}
+
+
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
@@ -49,14 +46,15 @@ export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.addSubscriber('todos', _drawTodoForm)
+		_todoService.addSubscriber('tasks', _drawTasks)
 		_todoService.getTodos()
-		//_addedToDos()
+
 
 	}
 
-	addTodo(e) {
-		e.preventDefault()
-		var form = e.target
+	addTodo(event) {
+		event.preventDefault()
+		var form = event.target
 		var todo = {
 			// TODO OBJECT
 

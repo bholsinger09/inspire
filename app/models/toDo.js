@@ -17,6 +17,23 @@ export default class ToDoModel {
     `
   }
 
+  // get AddTaskTemp() {
+  //   return `
+  //       < div id = "task" >
+  //       <label for="description">task</label>
+  //       <p>${this.description}</p>
+  // 			</div >
+  // `
+
+}
+
+
+
+
+
+
+
+
 }
 
 
