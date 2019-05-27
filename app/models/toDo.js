@@ -10,11 +10,12 @@ export default class ToDoModel {
   get TodoTemplate() {
     return `
         <div id = "inputToDo">
-         <h1>to do 's</h1>
-        <input class="new-todo" placeholder="enter todo's here" autofocus>
+         <label for="description"><h1>Your To Do's</h1></label>
+        <input type="text" class="form-control" id="description" name="description"placeholder="Enter Todo's">
         </div>
     `
   }
+
 }
 
 

@@ -9,7 +9,7 @@ import TodoService from "./todo-service.js";
 
 const _todoService = new TodoService()
 
-function _drawTodos() {
+function _drawTodoForm() {
 	let todoList = _todoService.Todos
 	let template = ''
 
@@ -25,22 +25,32 @@ function _drawTodos() {
 	//console.log(template)
 	console.log(template.search('</div>'))
 
-
-
-	document.getElementById('todos').innerHTML = template.slice(0, 142)
+	document.getElementById('todos').innerHTML = template.slice(0, 220)
 }
+
+// function _addedToDos() {
+// 	document.getElementById('todo-content-section').innerHTML = `
+// 	<form class="row" onsubmit="app.controller.todo-controller.addTodo(event))">
+// 	<div id = "inputUser">
+//          <label for="description">user</label>
+//         <input type="text" class="form-control" id="description" name="user"placeholder="enter user">
+//         </div>
+// 	`
+
+// }
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
-	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
+	document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
 
 
 export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
-		_todoService.addSubscriber('todos', _drawTodos)
+		_todoService.addSubscriber('todos', _drawTodoForm)
 		_todoService.getTodos()
+		//_addedToDos()
 
 	}
 
@@ -48,10 +58,20 @@ export default class TodoController {
 		e.preventDefault()
 		var form = e.target
 		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			// TODO OBJECT
+
+			completed: form.completed.value,
+			_id: form._id.value,
+			description: form.description.value,
+			user: form.user.value
+
 		}
 
+
+
+
 		_todoService.addTodo(todo)
+		form.reset()
 	}
 
 	toggleTodoStatus(todoId) {

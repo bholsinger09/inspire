@@ -57,7 +57,7 @@ export default class TodoService {
 	addTodo(todo) {
 		todoApi.post('', todo)
 			.then(res => {
-				// WHAT DO YOU DO AFTER CREATING A NEW TODO?
+				this.getTodos()
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
