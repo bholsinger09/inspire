@@ -1,5 +1,6 @@
 import ImageService from "./image-service.js";
 
+
 // Visualization`
 //    - The data from the services are each rendered. 
 //         - Quote (quote and author)
@@ -17,12 +18,24 @@ let _is = new ImageService()
 
 function _updateImagesUi() {
   let images = _is.ApiImages
+  //let url = images.url
+  //return url
   let template = ''
   template += images.ImageTemplate
 
 
   document.getElementById('image').innerHTML = template
 
+
+
+  //document.getElementsByTagName("body")[0].setAttribute('class', 'background-image')
+  //document.body.style.backgroundImage = 'url("images")';
+
+
+  //jquery
+
+
+  //$('body').css('background-image', 'url(images)');
 
 }
 
@@ -35,6 +48,9 @@ export default class ImageController {
 
     _is.getAllSImages()
   }
+  // addImage() {
+  //   _is.ApiImages.url
+  // }
 
 
   //here we will call _is to get image data from database

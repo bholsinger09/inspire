@@ -12,7 +12,9 @@ body{
 }
 #weather{
 background-color: azure;
-text-align-last: center
+text-align-last: center;
+
+
 }
 main{
   min-width: 100%;
@@ -29,3 +31,5 @@ main{
 
 
 } 
+
+

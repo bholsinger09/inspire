@@ -12,7 +12,7 @@
 <body id="bg-image">
 	<header id="weather"></header>
 	<section class="todo-form-section">
-		<button onclick="app.controllers.todoController.renderTasks()">The To Do Button</button>
+		<button id="todo-button" onclick="app.controllers.todoController.renderTasks()">The To Do Button</button>
 		<div>
 
 			<div id="todo-error"></div>
@@ -41,6 +41,7 @@
 
 	</main>
 	<footer id="quote"></footer>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
 
