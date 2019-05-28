@@ -46,3 +46,10 @@ p{
 label{
   color:red 
 }
+
+#task{
+  border-style: dotted;
+  border-color: yellow;
+  padding: 3em;
+  justify-content: center
+}

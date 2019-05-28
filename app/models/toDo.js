@@ -22,9 +22,9 @@ export default class ToDoModel {
 
         <div id = "task" >
         <label for="description">task</label>
-         <p id= "description" > ${this.description} </p>
-          <p>${this.user}</p>
-            <p id = "status" onclick = "app.controllers.todoController.toggleTodoStatus('${this._id}')" >completed:${this.completed}</p>
+         <p id= "description" >description of todo:  ${this.description} </p>
+          <p>current user: ${this.user}</p>
+            <p id = "status" onclick = "app.controllers.todoController.toggleTodoStatus('${this._id}')" >if completed:${this.completed}</p>
         </div >
         
 
