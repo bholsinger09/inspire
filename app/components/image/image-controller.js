@@ -16,26 +16,25 @@ let _is = new ImageService()
 
 //updateui needs created
 
-function _updateImagesUi() {
+function _setBackground() {
   let images = _is.ApiImages
-  //let url = images.url
-  //return url
-  let template = ''
-  template += images.ImageTemplate
+
+  let url = images.url
+  console.log(url)
+
+  console.log(images)
 
 
-  document.getElementById('image').innerHTML = template
 
 
 
-  //document.getElementsByTagName("body")[0].setAttribute('class', 'background-image')
+
+
+  document.getElementsByTagName("body")[0].setAttribute('background', url)
   //document.body.style.backgroundImage = 'url("images")';
 
 
-  //jquery
 
-
-  //$('body').css('background-image', 'url(images)');
 
 }
 
@@ -44,13 +43,13 @@ function _updateImagesUi() {
 //Public
 export default class ImageController {
   constructor() {
-    _is.addSubscribers('apiImages', _updateImagesUi)
+    _is.addSubscribers('apiImages', _setBackground)
 
     _is.getAllSImages()
   }
-  // addImage() {
-  //   _is.ApiImages.url
-  // }
+  // imageUrl() {
+  //  _getUrl()
+  //  }
 
 
   //here we will call _is to get image data from database
