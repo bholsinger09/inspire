@@ -24,7 +24,9 @@ export default class ToDoModel {
         <label for="description">task</label>
          <p id= "description" >description of todo:  ${this.description} </p>
           <p>current user: ${this.user}</p>
-            <p id = "status" onclick = "app.controllers.todoController.toggleTodoStatus('${this._id}')" >if completed:${this.completed}</p>
+            <p id = "status" >if completed:${this.completed}</p>
+            <button id="changeStatus" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">mark complete or not</button>
+            <button id="changeStatus" onclick="app.controllers.todoController.removeTodo('${this._id}')">remove</button>
         </div >
         
 
