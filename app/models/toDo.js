@@ -19,16 +19,30 @@ export default class ToDoModel {
 
   get TaskTemp() {
     return `
-    
+
         <div id = "task" >
         <label for="description">task</label>
-         <p>${this.description}</p>
+         <p id= "description" > ${this.description} </p>
           <p>${this.user}</p>
-            <p>completed:${this.completed}</p>
-  			</div >
+            <p id = "status" onclick = "app.controllers.todoController.toggleTodoStatus('${this._id}')" >completed:${this.completed}</p>
+        </div >
+        
+
+	
+
    `
 
   }
+
+
+  //working copy
+  // <div id="task" >
+  // <label for="description">task</label>
+  // <p>${this.description} </p>
+  // <p>${this.user}</p>
+  // <p>completed:${this.completed}</p>
+
+  // </div >
 
 
 
