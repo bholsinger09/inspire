@@ -11,7 +11,7 @@ const _todoService = new TodoService()
 
 function _drawTodoForm() {
 	document.getElementById('todos').innerHTML = `
-	<form class="todo" onsubmit="app.controllers.todoController.addTodo(event))">
+	<form class="todo" onsubmit="app.controllers.todoController.addToDo(event)">
          <div id = "inputToDo">
          <label for="description"><h1>Your To Do's</h1></label>
          <input type="text" class="form-control" id="description" name="description"placeholder="Enter Todo's">
@@ -73,16 +73,16 @@ export default class TodoController {
 
 	}
 
-	addTodo(event) {
+	addToDo(event) {
 		event.preventDefault()
-		var form = event.target
-		var todo = {
+		let form = event.target
+		let todo = {
 			// TODO OBJECT
 
-			completed: form.completed.value,
-			_id: form._id.value,
+			//completed: form.completed.value,
+			//_id: form._id.value,
 			description: form.description.value,
-			user: form.user.value
+			//user: form.user.value
 
 		}
 
