@@ -23,7 +23,7 @@ function _drawTodoForm() {
 
 
 
-
+	///old form
 	// < form class="todo" onsubmit = "app.controllers.todo-controller.addTodo(event))" >
 	// 	<div id="inputToDo">
 	// 		<label for="description"><h1>Your To Do's</h1></label>
@@ -33,7 +33,7 @@ function _drawTodoForm() {
 
 
 
-	//console.log(template)
+
 
 
 
@@ -94,12 +94,12 @@ export default class TodoController {
 	}
 
 	toggleTodoStatus(todoId) {
-		// asks the service to edit the todo status
+		// edit the todo status
 		_todoService.toggleTodoStatus(todoId)
 	}
 
 	removeTodo(todoId) {
-		// ask the service to run the remove todo with this id
+		// run the remove todo with this id
 		_todoService.removeTodo(todoId)
 	}
 

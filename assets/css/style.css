@@ -2,9 +2,7 @@
   color: red;
   font-size: 2em;
 }
-body{
-  background-color: azure
-}
+
 
 #weatherList{
   list-style-type: none;
@@ -13,6 +11,7 @@ body{
 #weather{
 background-color: azure;
 text-align-last: center;
+color:red
 
 
 }
@@ -26,10 +25,24 @@ main{
   background-color: blanchedalmond;
   align-content: center;
   min-width: 100vw;
-  text-align-last: center
+  text-align-last: center;
+  color: red
   
 
 
 } 
 
+#quote{
+  color:red
+}
 
+footer{
+  background-color: aqua
+}
+p{
+  color : red
+}
+
+label{
+  color:red 
+}
