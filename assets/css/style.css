@@ -2,3 +2,54 @@
   color: red;
   font-size: 2em;
 }
+
+
+#weatherList{
+  list-style-type: none;
+  
+}
+#weather{
+background-color: azure;
+text-align-last: center;
+color:red
+
+
+}
+main{
+  min-width: 100%;
+  min-height: 100%;
+}
+
+ #inputToDo{
+  padding-bottom: 2em;
+  background-color: blanchedalmond;
+  align-content: center;
+  min-width: 100vw;
+  text-align-last: center;
+  color: red
+  
+
+
+} 
+
+#quote{
+  color:red
+}
+
+footer{
+  background-color: aqua
+}
+p{
+  color : red
+}
+
+label{
+  color:red 
+}
+
+#task{
+  border-style: dotted;
+  border-color: yellow;
+  padding: 3em;
+  justify-content: center
+}

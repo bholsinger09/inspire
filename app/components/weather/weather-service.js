@@ -1,4 +1,5 @@
 import Weather from "../../models/weather.js";
+//private
 
 // @ts-ignore
 const weatherApi = axios.create({
@@ -19,20 +20,29 @@ function _setState(prop, data) {
 	_subscribers[prop].forEach(fn => fn());
 }
 
-
+//public
 export default class WeatherService {
-	get Weather() {
-		return _state.weather
-	}
 
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
 	}
 
+	get Weather() {
+		return _state.weather
+	}
+
+
+
 	getWeather() {
 		console.log('Calling the Weatherman')
-		weatherApi.get().then(res => {
-			_setState('weather', new Weather(res.data))
-		})
+		weatherApi.get()
+			.then(res => {
+				let weather = new Weather(res.data)
+				_setState('weather', weather)
+			})
 	}
+
+
+
+
 }

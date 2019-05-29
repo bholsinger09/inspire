@@ -1,41 +1,98 @@
 import TodoService from "./todo-service.js";
 
+//`Functionality`
+//- Todo's can be added to a list (POST)
+//	- Todo's can be removed (DELETE)
+//	- Todo's can be marked complete (PUT)
+//	- The todolist shows the total count of tasks currently being tracked
+//		- The todolist takes advantage of the TodoService to provide persistent data
+
 const _todoService = new TodoService()
 
-function _drawTodos() {
-	//WHAT IS MY PURPOSE?
+function _drawTodoForm() {
+	document.getElementById('todos').innerHTML = `
+	<form class="todo" onsubmit="app.controllers.todoController.addToDo(event)">
+         <div id = "inputToDo">
+         <label for="description"><h1>Your To Do's</h1></label>
+         <input type="text" class="form-control" id="description" name="description"placeholder="Enter Todo's">
+         </div>
+	
+	
+	`
+
+
+
+
+
+
+
+
+
+
+
 }
+
+function _drawTasks() {
+	let tasks = _todoService.Todos
+	let template = ''
+	tasks.forEach(task => {
+		template += task.TaskTemp
+	})
+	document.getElementById('todo-content-section').innerHTML = template
+
+}
+
+
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
-	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
+	document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
 
 
 export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
+		_todoService.addSubscriber('todos', _drawTasks)
+
 		_todoService.getTodos()
-		// Don't forget to add your subscriber
+
+
 	}
 
-	addTodo(e) {
-		e.preventDefault()
-		var form = e.target
-		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+	renderTasks() {
+		_drawTasks();
+		_drawTodoForm();
+
+	}
+
+	addToDo(event) {
+		event.preventDefault()
+		let form = event.target
+		let todo = {
+			// TODO OBJECT
+
+			//completed: form.completed.value,
+			//_id: form._id.value,
+			description: form.description.value,
+			//user: form.user.value
+
 		}
 
+
+
+
 		_todoService.addTodo(todo)
+
 	}
 
 	toggleTodoStatus(todoId) {
-		// asks the service to edit the todo status
+		// edit the todo status
 		_todoService.toggleTodoStatus(todoId)
 	}
 
 	removeTodo(todoId) {
-		// ask the service to run the remove todo with this id
+		// run the remove todo with this id
 		_todoService.removeTodo(todoId)
 	}
 
